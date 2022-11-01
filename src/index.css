@@ -1,13 +1,96 @@
-body {
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato:wght@300&family=Open+Sans:wght@300&family=Tiro+Gurmukhi&display=swap');
+
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  text-align: center;
+  background-color: #62c9cd;
+}
+.logo{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #f67f1dbb;
+  font-size: 2.5rem;
+  
+}
+.home-page{
+  margin-top: 40px;
+  color: #510202d3;
+  font-size: 1.8rem;
+}
+.topic{
+  margin-top: 40px;
+  font-size: 2rem;
+  color: #510202d3;
+}
+.instructions{
+  margin-top: 40px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #f5f1ec;
+  align-content: center;
+}
+.error-colour {
+  color: #f00c0c;
+  margin-top: 40px;
+  font-size: 3.0rem;
+}
+.url-color{
+  color: #f17e7e;
+  font-size: 2rem;
+}
+.resize{
+  font-size: 1.5rem;
+}
+.nested-header{
+  margin-top: 40px;
+  font-size: 2rem;
+}
+.nested-style{
+  margin-top: 30px;
+}
+button{
+  /* margin-left: 20px; */
+  /* margin-top: 30px; */
+  padding: 5px;
+  border: 1px solid white;
+  margin-left: 20px;
+  cursor: pointer;
+  background-color: #0c81ed;
+  margin-top: 10px;
+  width: 60px;
+  
+}
+ button:hover{
+  background-color: white;
+  color: black;
+}
+  button:focus{
+  outline: none;
+}
+input{
+  margin-top: 3opx;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.mt-3{
+  margin-top: 30px;
+  color: #413c3c;
+}
+.welcome-style{
+  margin-top: 40px;
+  
+
+}
+.profile{
+  margin-top: 20px;
+}
+input{
+  outline: none;
+  width: 20%;
+  height: 5vh;
 }

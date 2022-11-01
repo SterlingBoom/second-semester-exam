@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import About from './components/About'
+import ErrorPage from './components/ErrorPage'
+import Hobbies from './components/Hobbies'
+import Singing from './components/Singing'
+import Cooking from './components/Cooking'
+import { ErrorBoundary } from 'react-error-boundary'
+// import ErrorFallback from './components/ErrorFallBack'
+import ErrorHandler from './components/ErrorHandler'
+import { Profile } from './components/Profile'
+import { AuthProvider } from './components/auth'
+import { RequireAuth } from './components/RequireAuth'
+import { Login } from './components/Login'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <AuthProvider>
+        <Navbar />
+        <ErrorBoundary FallbackComponent={ErrorHandler}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='hobbies' element={<Hobbies />}>
+              <Route path='singing' element={<Singing />} />
+              <Route path='cooking' element={<Cooking />} />
+            </Route>
+            <Route
+              path='profile'
+              element={
+                <RequireAuth>
+                  <Profile />
+                </RequireAuth>
+              }
+            />
+            <Route path='login' element={<Login />} />
+
+            <Route path='*' element={<ErrorPage />} />
+          </Routes>
+        </ErrorBoundary>
+      </AuthProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
