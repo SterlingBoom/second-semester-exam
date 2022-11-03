@@ -25,6 +25,7 @@ export const Login = () => {
   const handleLogin = () => {
     auth.login(user)
     navigate(redirectPath, { replace: true })
+    
   }
   return (
     <div>

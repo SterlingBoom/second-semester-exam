@@ -22,7 +22,20 @@ body{
   margin-top: 40px;
   color: #510202d3;
   font-size: 1.8rem;
+  animation-name:slideIn;
+animation-duration:3s
 }
+@keyframes slideIn {
+from {
+margin-left : 100%;
+width:300%
+}
+to {
+margin-left:0;
+width:150%
+}
+}
+
 .topic{
   margin-top: 40px;
   font-size: 2rem;
