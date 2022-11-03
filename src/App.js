@@ -37,6 +37,7 @@ function App() {
                 </RequireAuth>
               }
             />
+            <Route path='*' element={<ErrorPage />} />
             <Route path='login' element={<Login />} />
           </Routes>
         </ErrorBoundary>
