@@ -16,6 +16,8 @@ body{
   margin-bottom: 20px;
   color: #f67f1dbb;
   font-size: 2.5rem;
+  animation-name:slideIn;
+animation-duration:3s
   
 }
 .home-page{
