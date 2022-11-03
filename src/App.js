@@ -27,6 +27,7 @@ function App() {
             <Route path='hobbies' element={<Hobbies />}>
               <Route path='singing' element={<Singing />} />
               <Route path='cooking' element={<Cooking />} />
+              <Route path='*' element={<ErrorPage />} />
             </Route>
             <Route
               path='profile'
@@ -37,8 +38,6 @@ function App() {
               }
             />
             <Route path='login' element={<Login />} />
-
-            <Route path='*' element={<ErrorPage />} />
           </Routes>
         </ErrorBoundary>
       </AuthProvider>
