@@ -9,8 +9,17 @@
 }
 body{
   text-align: center;
-  background-color: #62c9cd;
+  background-color: #e9eeee53;
+    background: url("./images/beachlove.jpg");
+    /* background-repeat: no-repeat; */
+    /* object-fit: cover; */
+    background-size:cover;
+    /* filter: grayscale(100%); */
 }
+    
+    /* background: cover; */
+
+
 .logo{
   margin-top: 40px;
   margin-bottom: 20px;
@@ -109,3 +118,59 @@ input{
   width: 20%;
   height: 5vh;
 }
+
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #9cadd1;
+  padding: 20px 80px;
+  box-shadow: 05px 15px (0,0,0,0.06);
+}
+ #navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ #navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+ }
+ .resize-pics{
+  /* background-color: #f1e4e4; */
+  height: 20vh;
+  color: #413c3c;
+  object-fit: fill;
+  /* width: ; */
+ }
+ img {
+  filter: grayscale(100%);
+}
+
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+}
+
+.nav-links:hover {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+}
+.navlinks:hover:after{
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #17cf97;
+  position: absolute;
+  bottom:-4px;
+  left:20px
+}
+
+
