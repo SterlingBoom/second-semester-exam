@@ -15,7 +15,7 @@ function Navbar() {
       </Helmet>
       <div style={{ backgroundImage: `url('${couple}')` }} />
       <h1>
-        <i>STERLING B'S LOVE CORNER</i>{' '}
+        <i>Relationship ENTHUSIAST</i>{' '}
       </h1>
 
       <div>

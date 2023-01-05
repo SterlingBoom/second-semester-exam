@@ -9,7 +9,7 @@
 }
 body{
   text-align: center;
-  background-color: #e9eeee53;
+  /* background-color: #e9eeee53; */
     background: url("./images/beachlove.jpg");
     /* background-repeat: no-repeat; */
     /* object-fit: cover; */
@@ -162,6 +162,7 @@ nav{
 .nav-links:hover {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
+  color: #413c3c;
 }
 .navlinks:hover:after{
   content: "";
