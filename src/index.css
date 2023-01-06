@@ -10,10 +10,10 @@
 body{
   text-align: center;
   /* background-color: #e9eeee53; */
-    background: url("./images/beachlove.jpg");
+    /* background: url("./images/beachlove.jpg"); */
     /* background-repeat: no-repeat; */
     /* object-fit: cover; */
-    background-size:cover;
+    /* background-size:cover; */
     /* filter: grayscale(100%); */
 }
     
@@ -30,7 +30,7 @@ animation-duration:3s
   
 }
 .home-page{
-  margin-top: 40px;
+  /* margin-top: 40px; */
   color: #510202d3;
   font-size: 1.8rem;
   animation-name:slideIn;
@@ -124,7 +124,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #9cadd1;
+  background: rgb(158, 136, 157);
   padding: 20px 80px;
   box-shadow: 05px 15px (0,0,0,0.06);
 }

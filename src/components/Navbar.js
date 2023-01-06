@@ -2,10 +2,9 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import { useAuth } from '../App'
 import { Helmet } from 'react-helmet-async'
-import couple from "../images/couple.jpg"
 
 function Navbar() {
-  const {  setName } = useAuth()
+  // const {  setName } = useAuth()
   return (
     <nav>
       <Helmet>
@@ -13,7 +12,7 @@ function Navbar() {
         <meta name='description' content='navigation' />
         <link rel='canonical' href='/Navigation' />
       </Helmet>
-      <div style={{ backgroundImage: `url('${couple}')` }} />
+      
       <h1>
         <i>Relationship ENTHUSIAST</i>{' '}
       </h1>
@@ -27,9 +26,9 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to='/'
+              to='/about'
               className='nav-links'
-              onClick={() => setName((name) => (name = ''))}
+
             >
               About
             </Link>
@@ -40,13 +39,13 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to='/about' className='nav-links'>
+            <Link to='/' className='nav-links'>
               Profile
             </Link>
           </li>
           <li>
-            <Link to='/' className='nav-links'>
-              login
+            <Link to='/LogInForm' className='nav-links'>
+              Login
             </Link>
           </li>
         </ul>
