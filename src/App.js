@@ -3,6 +3,9 @@ import Home from './components/Home'
 import React, { createContext, useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import AuthProvider from './components/AuthProvider'
+import RestrictedRoute from './components/RestrictedRoute'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from './components/ErrorFallBack'
 
 import About from './components/About'
 import LogInForm from './components/LogInForm'
@@ -16,6 +19,7 @@ export const useAuth = () => {
 function App() {
   return (
     <div>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
       <AuthProvider>
         <Navbar />
 
@@ -32,6 +36,7 @@ function App() {
           />
         </Routes>
       </AuthProvider>
+      </ErrorBoundary>
     </div>
   )
 }

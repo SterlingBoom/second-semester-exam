@@ -4,7 +4,7 @@ import useLog from './useLog'
 import { AuthContext } from '../App'
 import Reducer from './reducer'
 
-//Provides neccessary data required by the Routes
+
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate()
   const location = useLocation()
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
       field: e.target.name,
       payload: e.target.value,
     })
-    if (state.amount !== ' ') {
+    if (state.firstName !== ' ') {
       state.fund = ' '
       state.success = ' '
     }
@@ -42,24 +42,24 @@ const AuthProvider = ({ children }) => {
 
   
 
-  // const Form_Btn = (e) => {
-  //   e.preventDefault()
-  //   if (state.firstName === '') {
-  //     dispatch({ type: 'EMPTY_STRING' })
-  //     return
-  //   }
-  //   if (state.lastName === '') {
-  //     dispatch({ type: 'EMPTY' })
-  //     return
-  //   }
-  //   
-  //   }
-  //   if (isNaN(state.age)) {
-  //     dispatch({ type: 'WRONG_AGE' })
-  //     return
-  //   }
+  const Form_Btn = (e) => {
+    e.preventDefault()
+    if (state.firstName === '') {
+      dispatch({ type: 'EMPTY_STRING' })
+      return
+    }
+    if (state.lastName === '') {
+      dispatch({ type: 'EMPTY' })
+      return
+    }
+    
+    }
+    if (isNaN(state.age)) {
+      dispatch({ type: 'WRONG_AGE' })
+      return
+    }
 
-  /
+  
      if (isNaN(state.phone)) {
       dispatch({ type: 'INVALID_PHONE' })
      return
@@ -78,7 +78,7 @@ const AuthProvider = ({ children }) => {
          myfirstName: state.firstName,
          mylastName:state.lastName,
          myphone: state.phone,
-         my gender:state.gender,
+         mygender:state.gender,
          myAge: state.age,
          myEmail:state.email
        }
@@ -88,7 +88,10 @@ const AuthProvider = ({ children }) => {
     
   const { name, setName, handleChange, text, setText } = useLog('')
 
-  
+  const fakeAuth = () =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve('2342f2f1d131rf12'), 250)
+    }) 
 
   const onLogin = async () => {
     if (name === '') {
@@ -99,12 +102,14 @@ const AuthProvider = ({ children }) => {
       setText('UserName Must Not be Numbers Only')
       return
     }
+      const toker = await fakeAuth()
 
-    
-     const origin = location.state?.from?.pathname || '/LogInForm'
-     navigate(origin)
-   navigate('/LogInForm')
-  }
+      dispatch({ type: 'Token', tok: toker })
+      const origin = location.state?.from?.pathname || '/About'
+      navigate(origin)
+      navigate('/About')
+  
+}
 
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' })
@@ -122,6 +127,11 @@ const AuthProvider = ({ children }) => {
     text,
     setText,
     FUNDS: state.funds,
+    FIRSTNAME:state.firstName,
+    LASTNAME:state.lastName,
+    AGE: state.age,
+    GENDER:state.gender,
+    EMAIL:state.email,
     FUND: state.fund,
     PHONE: state.phone,
     VALUES: state.values,

@@ -11,4 +11,5 @@
 //   return children
 // }
 // export default RestrictedRoute
+//
 "use strict";
