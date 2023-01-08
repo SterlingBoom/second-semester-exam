@@ -1,4 +1,4 @@
-//Provides the Required response to a specific action and condition
+//Provides the Required response to an action and condition
 const Reducer = (state, action) => {
   switch (action.type) {
     case 'handle_Input':
@@ -10,14 +10,14 @@ const Reducer = (state, action) => {
     case 'INVALID_PHONE':
       return {
         ...state,
-        fund: 'Invalid Phone Number',
+        revert: 'Invalid Phone Number',
       }
     
-    case 'SUFFICIENT':
+    case 'ADEQUATE':
       const newPeople = [...state.values, action.payload]
       return {
         ...state,
-        fund: 'ReGISTRATION SUCCESSFUL Successful',
+        revert: 'REGISTRATION SUCCESSFUL!',
         values: newPeople,
         firstName: '',
         lastName: '',
@@ -30,44 +30,45 @@ const Reducer = (state, action) => {
     case 'EMPTY_STRING':
       return {
         ...state,
-        fund: 'Please Enter your First Name',
+        revert: 'Please Enter your First Name',
       }
     
     case 'EMPTY':
       return {
         ...state,
-        fund: 'Please Enter your Last Name',
+        revert: 'Please Enter your Last Name',
       }
     
     case 'WRONG_AGE':
       return {
         ...state,
-        fund: 'Please Enter A VALID AGE',
+        revert: 'Please Enter A VALID AGE',
       }
     
     case 'WRONG_EMAIL':
       return {
         ...state,
-        fund: 'Please Enter A VALID EMAIL',
+        revert: 'Please Enter A VALID EMAIL',
       }
     
    
-    case 'LOGOUT':
-      return {
-        ...state,
-        token: null,
-        funds: '',
-        fund: '',
-        phone: '',
-        age: '',
-        email: '',
-        values: [],
+    // case 'LOGOUT':
+    //   return {
+    //     ...state,
+    //     token: null,
+    //     reverts: '',
+    //     revert: '',
+    //     phone: '',
+    //     age: '',
+    //     email: '',
+    //     values: [],
+      
 
-        firstName: '',
-        lastName: '',
+    //     firstName: '',
+    //     lastName: '',
 
         
-      }
+    //   }
     
     
     default:

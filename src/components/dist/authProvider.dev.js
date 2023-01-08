@@ -70,10 +70,10 @@
 //       dispatch({ type: 'SUFFICIENT', payload: suffix })
 //    }
 //   const { name, setName, handleChange, text, setText } = useLog('')
-//   const fakeAuth = () =>
-//     new Promise((resolve) => {
-//       setTimeout(() => resolve('2342f2f1d131rf12'), 250)
-//     }) 
+//   // const fakeAuth = () =>
+//   //   new Promise((resolve) => {
+//   //     setTimeout(() => resolve('2342f2f1d131rf12'), 250)
+//   //   }) 
 //   const onLogin = async () => {
 //     if (name === '') {
 //       setText('UserName Cannot Be Empty')
@@ -83,11 +83,11 @@
 //       setText('UserName Must Not be Numbers Only')
 //       return
 //     }
-//       // const toker = await fakeAuth()
-//       // dispatch({ type: 'Token', tok: toker })
-//       // const origin = location.state?.from?.pathname || '/About'
-//       // navigate(origin)
-//       // navigate('/About')
+//       const toker = await fakeAuth()
+//       dispatch({ type: 'Token', tok: toker })
+//       const origin = location.state?.from?.pathname || '/About'
+//       navigate(origin)
+//       navigate('/About')
 // }
 //   const handleLogout = () => {
 //     dispatch({ type: 'LOGOUT' })
@@ -96,15 +96,15 @@
 //   }
 //   const value = {
 //     name,
-//     setName,
-//     handleChange,
-//     handleLogin: onLogin,
-//     onLogout: handleLogout,
+//     // setName,
+//     // handleChange,
+//     // handleLogin: onLogin,
+//     // onLogout: handleLogout,
 //     text,
 //     setText,
-//     FUNDS: state.funds,
-//     FIRSTNAME:state.firstName,
-//     LASTNAME:state.lastName,
+//     // FUNDS: state.funds,
+//     // FIRSTNAME:state.firstName,
+//     // LASTNAME:state.lastName,
 //     AGE: state.age,
 //     GENDER:state.gender,
 //     EMAIL:state.email,

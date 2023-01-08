@@ -173,5 +173,58 @@ nav{
   bottom:-4px;
   left:20px
 }
+.form-container{
+     position: relative;
+     border: 1px solid black;
+}
+.form-box {
+    /* margin-top: 0px; */
+      border-radius: 25px;
+    /* border-bottom-style: solid; */
+    /* border-color: #50e54b; */
 
+}
+ form {
+     position: absolute;
+     top: 0;
+     right: 0;
+     margin-top: 180px;
+     /* width: 300px; */
+ 
+}
+.form-header{
+  float: right;
+  margin-top: 150px;
+  color: #c1c1c1;
+  margin-right: 30px;
+}
+input{
+   width: 86%;
+  padding: 7px 7px;
+  border: #c1c1c1 solid 1px;
+  height: 40px;
+  background: none;
+  margin-right:120px
+}
+select{
+   width: 86%;
+  padding: 7px 7px;
+  border: #e73b3b solid 1px;
+  height: 40px;
+  background: white;
+  margin-right:120px
+}
+label{
+  /* color:#f00c0c */
+}
+.sign-in{
+  width: 120px;
+}
+.sign-in:hover{
+  background-color: #5ba9f1;
+}
 
+.username{
+  width: 300px;
+  margin-right: 20px;
+}

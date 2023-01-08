@@ -44,7 +44,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to='/LogInForm' className='nav-links'>
+            <Link to='/' className='nav-links'>
               Login
             </Link>
           </li>

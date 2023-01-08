@@ -20,22 +20,23 @@ function App() {
   return (
     <div>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <AuthProvider>
-        <Navbar />
+        <AuthProvider>
+          <Navbar />
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route
-            path='/login'
-            element={
-              <RestrictedRoute>
-                <LogInForm />
-              </RestrictedRoute>
-            }
-          />
-        </Routes>
-      </AuthProvider>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route
+              path='/LoginForm'
+              element={
+                <RestrictedRoute>
+                  <LogInForm />
+                </RestrictedRoute>
+              }
+            />
+          </Routes>
+        </AuthProvider>
       </ErrorBoundary>
     </div>
   )

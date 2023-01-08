@@ -1,11 +1,16 @@
- import React from 'react'
+//  import React from 'react'
+ import { useAuth } from '../App'
+ import { useEffect, useRef } from 'react'
+ import Hold from '../images/holdHands.jpg'
 
 function LogInForm() {
+  
   const {
     FIRSTNAME,
     LASTNAME,
-    FUND,
-    Form_Btn,
+    AGAIN,
+    
+    // Form_Btn,
     PHONE,
     GENDER,
     AGE,
@@ -16,105 +21,120 @@ function LogInForm() {
   useEffect(() => {
     myuseref.current.focus();
   }, []);
-  const Successfun = () => {
+  const Done = () => {
     return (
       <>
         <p>
-          {FUND}{" "}
-          <img
-            src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/31-512.png"
-            alt=""
-            width="30px"
-            height="30px"
-          />
+          {AGAIN}{' '}
+
         </p>
       </>
-    );
+    )
   };
   return (
-    <div className='form-container'>
-      <h2> Log in to register for the workshop</h2>
-      <h1>yayyyyyyyyyyyyyyyyyyyyyy</h1>
-      <form>
-        <div>
-          <label for='firstname'> </label>
-          <input
-            type='text'
-            ref={myuseref}
-            value={FIRSTNAME}
-            onChange={handle_Input}
-            placeholder='First Name'
-            autoComplete='off'
-            required
-          />
-        </div>
-        <div>
-          <label for='Lastname'> </label>
-          <input
-            type='text'
-            ref={myuseref}
-            value={LASTNAME}
-            onChange={handle_Input}
-            placeholder='Last Name'
-            autoComplete='off'
-            required
-          />
-        </div>
-        <div>
-          <label for='Age'> </label>
-          <input
-            type='number'
-            ref={myuseref}
-            value={AGE}
-            onChange={handle_Input}
-            placeholder='Age'
-            autoComplete='off'
-            required
-          />
-        </div>
-        
-        <div>
-          <label for='Phone number'> </label>
-          <input
-            type='tel'
-            ref={myuseref}
-            value={PHONE}
-            onChange={handle_Input}
-            placeholder='Phone'
-            autoComplete='off'
-            required
-          />
-        </div>
-        <div>
-          <label for='Email'> </label>
-          <input
-            type='email'
-            ref={myuseref}
-            value={EMAIL}
-            onChange={handle_Input}
-            placeholder='Email'
-            autoComplete='off'
-            required
-          />
-        </div>
-        <div>
-          <label labelfor='Gender'></label>
-          <select value={GENDER} onChange={handle_Input} name='gender'>
-            <option value='select'>select</option>
-            <option value='Male'>Male</option>
-            <option value='Female'>Female</option>
-          </select>
-          <p
-            className={FUND === 'Recharge Successful' ? 'success' : 'error_msg'}
-          >
-            {FUND === 'Recharge Successful' ? <Successfun /> : FUND}
-          </p>
+    <div>
+      <div
+        style={{
+          backgroundImage: `url(${Hold})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          height: '700px',
+        }}
+      >
 
-          <button type='submit' className='sign-in' onClick={Form_Btn}>
-            REGISTER NOW
-          </button>
-        </div>
-      </form>
+      <div className='form-container form-box'>
+        <h2 className='form-header'> Log in to register for the workshop</h2>
+        
+        <form>
+          <div>
+            <input
+              type='text'
+              id='firstName'
+              ref={myuseref}
+              value={FIRSTNAME}
+              onChange={handle_Input}
+              placeholder='First Name'
+              autoComplete='off'
+              required
+            />
+            <label htmlFor='firstname'>First Name </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              id='firstName'
+              ref={myuseref}
+              value={LASTNAME}
+              onChange={handle_Input}
+              placeholder='Last Name'
+              autoComplete='off'
+              required
+            />
+            <label htmlFor='Lastname'>Last Name </label>
+          </div>
+          <div>
+            <input
+              type='number'
+              id='firstName'
+              ref={myuseref}
+              value={AGE}
+              onChange={handle_Input}
+              placeholder='Age'
+              autoComplete='off'
+              required
+            />
+            <label htmlFor='Age'> Age</label>
+          </div>
+
+          <div>
+            <input
+              type='tel'
+              id='firstName'
+              ref={myuseref}
+              value={PHONE}
+              onChange={handle_Input}
+              placeholder='Phone'
+              autoComplete='off'
+              required
+            />
+            <label htmlFor='Phone number'>Phone Number </label>
+          </div>
+          <div>
+            <input
+              type='email'
+              id='firstName'
+              ref={myuseref}
+              value={EMAIL}
+              onChange={handle_Input}
+              placeholder='Email'
+              autoComplete='off'
+              required
+            />
+            <label htmlFor='Email'>Email </label>
+          </div>
+          <div>
+            <select value={GENDER} onChange={handle_Input} name='gender'>
+              <option value='select'>select</option>
+              <option value='Male'>Male</option>
+              <option value='Female'>Female</option>
+            </select>
+            <label labelfor='Gender'></label>
+            <p
+              className={
+                AGAIN === 'Registration Successful' ? 'success' : 'error_msg'
+              }
+            >
+              {AGAIN === 'Registration Successful' ? <Done /> : AGAIN}
+            </p>
+
+            <button type='submit' className='sign-in'>
+              REGISTER NOW
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
     </div>
   )
 }

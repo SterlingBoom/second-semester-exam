@@ -19,7 +19,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//Provides the Required response to a specific action and condition
+//Provides the Required response to an action and condition
 var Reducer = function Reducer(state, action) {
   switch (action.type) {
     case 'handle_Input':
@@ -27,13 +27,13 @@ var Reducer = function Reducer(state, action) {
 
     case 'INVALID_PHONE':
       return _objectSpread({}, state, {
-        fund: 'Invalid Phone Number'
+        revert: 'Invalid Phone Number'
       });
 
-    case 'SUFFICIENT':
+    case 'ADEQUATE':
       var newPeople = [].concat(_toConsumableArray(state.values), [action.payload]);
       return _objectSpread({}, state, {
-        fund: 'ReGISTRATION SUCCESSFUL Successful',
+        revert: 'REGISTRATION SUCCESSFUL!',
         values: newPeople,
         firstName: '',
         lastName: '',
@@ -45,36 +45,36 @@ var Reducer = function Reducer(state, action) {
 
     case 'EMPTY_STRING':
       return _objectSpread({}, state, {
-        fund: 'Please Enter your First Name'
+        revert: 'Please Enter your First Name'
       });
 
     case 'EMPTY':
       return _objectSpread({}, state, {
-        fund: 'Please Enter your Last Name'
+        revert: 'Please Enter your Last Name'
       });
 
     case 'WRONG_AGE':
       return _objectSpread({}, state, {
-        fund: 'Please Enter A VALID AGE'
+        revert: 'Please Enter A VALID AGE'
       });
 
     case 'WRONG_EMAIL':
       return _objectSpread({}, state, {
-        fund: 'Please Enter A VALID EMAIL'
+        revert: 'Please Enter A VALID EMAIL'
       });
-
-    case 'LOGOUT':
-      return _objectSpread({}, state, {
-        token: null,
-        funds: '',
-        fund: '',
-        phone: '',
-        age: '',
-        email: '',
-        values: [],
-        firstName: '',
-        lastName: ''
-      });
+    // case 'LOGOUT':
+    //   return {
+    //     ...state,
+    //     token: null,
+    //     reverts: '',
+    //     revert: '',
+    //     phone: '',
+    //     age: '',
+    //     email: '',
+    //     values: [],
+    //     firstName: '',
+    //     lastName: '',
+    //   }
 
     default:
       return state;

@@ -40,13 +40,16 @@ function Home() {
           Enter a username to gave access to a log in form to reserve a spot for
           the workshop
         </h4>
+        
         <input
           ref={myuseref}
           type='text'
-          className='input_user'
+          className='username'
           value={name}
           onChange={handleChange}
         />
+        <label for="Username">Username</label><br/>
+        
         <button type='button' className='sign-in' onClick={handleLogin}>
           Sign In
         </button>
