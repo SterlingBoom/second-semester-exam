@@ -47,7 +47,15 @@ function App() {
                 </RestrictedRoute>
               }
             />
-            <Route path='profile' element={<Profile />} />
+            <Route
+              path='/Profile'
+              element={
+                <RestrictedRoute>
+                  <Profile />
+                </RestrictedRoute>
+              }
+            />
+            
           </Routes>
         </AuthProvider>
       </ErrorBoundary>

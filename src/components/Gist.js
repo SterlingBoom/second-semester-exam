@@ -18,6 +18,7 @@ function Gist() {
          DontClick!!!
       </CustomNavLink>
       <Outlet />
+      
     </div>
   )
 }

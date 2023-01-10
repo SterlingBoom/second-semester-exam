@@ -4,10 +4,6 @@ import loveit from '../images/lovesofine.png'
 
 
 const Profile = ()=> {
- function randomNumber (){
-  let randomValue= Math.floor(Math.random() * 10)
-  return randomValue
- }
  const { name,  VALUES } = useAuth()
  return (
   <div
@@ -29,41 +25,46 @@ const Profile = ()=> {
        <link rel='canonical' href='/profile' />
      </Helmet>
      <img src={loveit} alt="love" height={'50px'} />
-     <h1 className='left-align'>Welcome, &nbsp; {name.toUpperCase()} We are glad to have you </h1>
-     <h4 className='details'>Find your details below</h4>
-     <h2 className='m-t'> your Seat Number is #20#.</h2>
+     <h1 className='left-align'>Welcome {name.toUpperCase()}, We are glad to have you </h1>
+     <p className='details'>Find your details below</p>
+     <h1 className='m-t'> Your Seat Number is #20#.</h1>
+     
      
      {VALUES.map((vals) => {
        return (
          <div className='' key={vals.id}>
-           <p className='underline'>
+           <h1 className='underline'>
              <b>First Name</b>:&nbsp; {vals.myFirstName}
-           </p>
-           <p className='underline'>
+           </h1>
+           <h1 className='underline'>
              <b>Last Name</b>: &nbsp; {vals.myLastName}
-           </p>
-           <p className='underline'>
+           </h1>
+           <h1 className='underline'>
              <b>Age </b>: &nbsp; {vals.myAge}
-           </p>
-           <p className='underline'>
+           </h1>
+           <h1 className='underline'>
              {' '}
              <b>Email</b>: &nbsp;{vals.myEmail}
-           </p>
-           <p className='underline'>
+           </h1>
+           <h1 className='underline'>
              <b>Gender</b>: &nbsp; {vals.myGender}
-           </p>
-           <p className='underline'>
+           </h1>
+           <h1 className='underline'>
              <b>Marital Status</b>: &nbsp; {vals.myMaritalStatus}
-           </p>
-           <p>
+           </h1>
+
+           <h1 className='underline'>
+             {' '}
              <b>Time of Registration</b>: {vals.time}
-           </p>
+           </h1>
+           <h4>Date: 08/05/2024</h4>
+           <h5>Venue: CC hub Yaba Lagos</h5>
            <br />
            <br />
-           <p className='see-you'>
+           <h1 className='see-you'>
              {' '}
              <i>SEE YOU THERE</i>
-           </p>
+           </h1>
          </div>
        )
      })}

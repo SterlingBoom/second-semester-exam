@@ -75,7 +75,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to='/Profile'
+              to='/'
               className='nav-links'
               activeclass='active'
               spy='trur'

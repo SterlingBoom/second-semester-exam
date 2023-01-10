@@ -1,6 +1,6 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, redirect } from 'react-router-dom'
 import { useReducer } from 'react'
-import useLog from './useLog'
+import useLog from './logHook'
 import { AuthContext } from '../App'
 import Reducer from './reducer'
 
@@ -85,11 +85,17 @@ const AuthProvider = ({ children }) => {
          myEmail:state.email,
          myMaritalStatus:state.maritalStatus
        }
-  dispatch({ type: 'ADEQUATE', payload: suffix })
+  // dispatch({ type: 'ADEQUATE', payload: suffix })
+   const redirect = location.state?.path || '/Profile'
+     dispatch({ type: 'ADEQUATE', payload:suffix })
+     navigate(redirect, { replace: true })
+  
       }
    }
     
   const { name, setName, handleChange, text, setText } = useLog('')
+
+  
 
 
 
@@ -116,6 +122,8 @@ const redirectPath = location.state?.path || '/Home'
    navigate(redirectPath, { replace: true })
   
   }
+ 
+
 
   const value = {
     name,
@@ -123,6 +131,7 @@ const redirectPath = location.state?.path || '/Home'
     handleChange,
     handleLogin: onLogin,
     logOut: handleLogout,
+    // registered:onRegistrationSuccessful,
     text,
     setText,
     REVERTS: state.reverts,

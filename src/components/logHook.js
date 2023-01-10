@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useLog = () => {
+const logHook = () => {
   const [name, setName] = useState('')
   const [text, setText] = useState('')
 
@@ -16,4 +16,4 @@ const useLog = () => {
 }
 
 
-export default useLog
+export default logHook

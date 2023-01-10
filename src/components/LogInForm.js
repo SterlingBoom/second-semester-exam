@@ -1,7 +1,7 @@
 //  import React from 'react'
  import { useAuth } from '../App'
  import { useEffect, useRef } from 'react'
- import useLog from './useLog'
+//  import useLog from './useLog'
  import Hold from '../images/holdHands.jpg'
 
 function LogInForm() {
@@ -21,7 +21,7 @@ function LogInForm() {
     EMAIL,
     handle_Input,
   } = useAuth();
-  // const {name} = useLog;
+  
   
   const myuseref = useRef(null);
   useEffect(() => {
@@ -51,7 +51,7 @@ function LogInForm() {
         
         <div className='form-container form-box'>
           <h1 className='welcome-header'>WELCOME&nbsp;{name.toUpperCase()} </h1>
-          <h6 className='warning'>Please note that this page is accessible to 18years and above</h6>
+          <h6 className='warning'>Please note that this page is accessible to 18years and above ONLY</h6>
           <h2 className='form-header'> Log In To Register For The Workshop</h2>
 
           <form>
