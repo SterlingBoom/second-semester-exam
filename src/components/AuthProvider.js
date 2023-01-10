@@ -1,6 +1,6 @@
 import { useNavigate, useLocation, redirect } from 'react-router-dom'
 import { useReducer } from 'react'
-import useLog from './logHook'
+import UseLog from './UseLog'
 import { AuthContext } from '../App'
 import Reducer from './reducer'
 
@@ -93,7 +93,7 @@ const AuthProvider = ({ children }) => {
       }
    }
     
-  const { name, setName, handleChange, text, setText } = useLog('')
+  const { name, setName, handleChange, text, setText } = UseLog('')
 
   
 

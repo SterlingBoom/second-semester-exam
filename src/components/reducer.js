@@ -1,4 +1,4 @@
-//Provides the Required response to an action and condition
+
 const Reducer = (state, action) => {
   switch (action.type) {
     case 'handle_Input':

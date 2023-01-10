@@ -15,7 +15,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var logHook = function logHook() {
+var LogHook = function LogHook() {
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       name = _useState2[0],
@@ -44,5 +44,5 @@ var logHook = function logHook() {
   };
 };
 
-var _default = logHook;
+var _default = LogHook;
 exports["default"] = _default;

@@ -1,7 +1,7 @@
-//  import React from 'react'
+
  import { useAuth } from '../App'
  import { useEffect, useRef } from 'react'
-//  import useLog from './useLog'
+
  import Hold from '../images/holdHands.jpg'
 
 function LogInForm() {
