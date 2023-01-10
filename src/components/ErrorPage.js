@@ -4,7 +4,7 @@ function ErrorPage() {
   return (
     <>
       <Helmet>
-        <title>Error 404  page</title>
+        <title>Error 404 page</title>
         <meta name='description' content=' Test for ERROR 404' />
         <link rel='canonical' href='/ErrorPage' />
       </Helmet>

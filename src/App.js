@@ -1,48 +1,65 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import React, { createContext, useContext } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import AuthProvider from './components/AuthProvider'
+import RestrictedRoute from './components/RestrictedRoute'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from './components/ErrorFallBack'
+
 import About from './components/About'
 import ErrorPage from './components/ErrorPage'
-import Hobbies from './components/Hobbies'
-import Singing from './components/Singing'
-import Cooking from './components/Cooking'
-import { ErrorBoundary } from 'react-error-boundary'
-// import ErrorFallback from './components/ErrorFallBack'
-import ErrorHandler from './components/ErrorHandler'
-import { Profile } from './components/Profile'
-import { AuthProvider } from './components/auth'
-import { RequireAuth } from './components/RequireAuth'
-import { Login } from './components/Login'
+import Gist from './components/Gist'
+import LogInForm from './components/LogInForm'
+import Profile from './components/Profile'
+import Healthy from './components/Healthy'
+import NotHealthy from './components/NotHealthy'
+// import Profile from './components/Profile'
+
+export const AuthContext = createContext(null)
+export const useAuth = () => {
+  return useContext(AuthContext)
+}
 
 function App() {
   return (
-    <>
-      <AuthProvider>
-        <Navbar />
-        <ErrorBoundary FallbackComponent={ErrorHandler}>
+    <div>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <AuthProvider>
+          <Navbar />
+          {/* <Home /> */}
+
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/Home' element={<Home />} />
             <Route path='about' element={<About />} />
-            <Route path='hobbies' element={<Hobbies />}>
-              <Route path='singing' element={<Singing />} />
-              <Route path='cooking' element={<Cooking />} />
-              <Route path='*' element={<ErrorPage />} />
+            <Route path='gist' element={<Gist/>}>
+              <Route path='healthy' element={<Healthy />} />
+            <Route path='nothealthy' element={<NotHealthy />} />
+            <Route path='*' element={<ErrorPage />} />
             </Route>
+            
             <Route
-              path='profile'
+              path='/LoginForm'
               element={
-                <RequireAuth>
-                  <Profile />
-                </RequireAuth>
+                <RestrictedRoute>
+                  <LogInForm />
+                </RestrictedRoute>
               }
             />
-            <Route path='*' element={<ErrorPage />} />
-            <Route path='login' element={<Login />} />
+            <Route
+              path='/Profile'
+              element={
+                <RestrictedRoute>
+                  <Profile />
+                </RestrictedRoute>
+              }
+            />
+            
           </Routes>
-        </ErrorBoundary>
-      </AuthProvider>
-    </>
+        </AuthProvider>
+      </ErrorBoundary>
+    </div>
   )
 }
 

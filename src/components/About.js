@@ -1,29 +1,41 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
+import Smile from '../images/smilingCouple.jpg'
 
+// import beachlove from '../images/beachlove.jpg'
 function About() {
   return (
-    <>
-      <Helmet>
-        <title>Home page for Olubunmi's exam About page</title>
-        <meta
-          name='description'
-          content='My Altschool second semester exam About page'
-        />
-        <link rel='canonical' href='/About' />
-      </Helmet>
+    <div
+      style={{
+        backgroundImage: `url(${Smile})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '700px',
+      }}
+    >
+      <div>
+        <Helmet>
+          <title>About</title>
+          <meta
+            name='description'
+            content='Give Detailed Description Of The Application'
+          />
 
-      <h2 className='topic'>Frontend Second Semester Examination Project</h2>
-      <h3 className='instructions'>
-        Question Three : <br />
-        Setup react-router, implement Nested routes,
-        <br /> 404 page, and Error boundary.
-        <br /> Set up fake userAuthContext using the context API to always carry
-        out a fake authentication, <br /> bonus - extract out a custom hook to
-        get the currently logged-in user.
-        <br /> Implement SEO and Navigation menu that will show on each page.
-      </h3>
-    </>
+          <link rel='canonical' href='/About' />
+        </Helmet>
+        <main className='main'>
+        <q className='about'>
+          Your Personal and favourite Relationship Coach..... <br/>We started love's corner meetup in 2019<br/>
+          to help people overcome their emotional challenges successfully. <br/>We match
+          you with coaches who specialize in areas where you need help,<br/> and our
+          coaches provide actionable advice that's personalized to your
+          situation. <br/>. We're available  for ongoing support along your relationship
+          journey.
+        </q>
+        </main>
+      </div>
+    </div>
   )
 }
 
