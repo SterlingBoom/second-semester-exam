@@ -61,7 +61,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to='/'
+              to='/Gist'
               className='nav-links'
               activeclass='active'
               spy='true'

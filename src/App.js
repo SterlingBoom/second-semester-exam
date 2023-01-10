@@ -8,9 +8,12 @@ import { ErrorBoundary } from 'react-error-boundary'
 import ErrorFallback from './components/ErrorFallBack'
 
 import About from './components/About'
+import ErrorPage from './components/ErrorPage'
 import Gist from './components/Gist'
 import LogInForm from './components/LogInForm'
 import Profile from './components/Profile'
+import Healthy from './components/Healthy'
+import NotHealthy from './components/NotHealthy'
 // import Profile from './components/Profile'
 
 export const AuthContext = createContext(null)
@@ -30,7 +33,11 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/Home' element={<Home />} />
             <Route path='about' element={<About />} />
-            <Route path='gist' element={<Gist/>} />
+            <Route path='gist' element={<Gist/>}>
+              <Route path='healthy' element={<Healthy />} />
+            <Route path='nothealthy' element={<NotHealthy />} />
+            <Route path='*' element={<ErrorPage />} />
+            </Route>
             
             <Route
               path='/LoginForm'

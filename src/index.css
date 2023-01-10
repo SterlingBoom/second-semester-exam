@@ -219,6 +219,21 @@ nav{
   margin-right: 30px;
   font-weight: 900;
 }
+.header-align{
+  text-align: center;
+  color: #cc8181;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.about{
+  line-height: 1.5rem;
+  color: #fff;
+  font-size: 2rem;
+  /* font-weight: bolder; */
+  text-align: left;
+  /* z-index: 10; */
+  padding-top: 20px;
+}
 .welcome-header{
   text-align: center;
   padding-top: 30px;

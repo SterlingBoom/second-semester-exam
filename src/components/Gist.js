@@ -1,12 +1,22 @@
 import React from 'react'
-import { Link,Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import CustomNavLink from './CustomNavLink'
 
 function Gist() {
   return (
     <div>
-      <h1> DATING TIMELINE</h1>
-      <Link to='Healthy'>Healthy Dating timeline</Link>
-      <Link to='NotHealthy'>Healthy Dating timeline</Link>
+      <h1 className='header-align'>DATING TIMELINE</h1>
+      <CustomNavLink className='resize' to='Healthy'>
+        Healthy Dating Timeline{' '}
+      </CustomNavLink>
+      &nbsp;| &nbsp; 
+      <CustomNavLink className='resize' to='NotHealthy'>
+       Not Healthy timeline
+      </CustomNavLink>
+       &nbsp;| &nbsp; 
+      <CustomNavLink className='resize' to='Errorpage'>
+         DontClick!!!
+      </CustomNavLink>
       <Outlet />
     </div>
   )
