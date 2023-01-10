@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 import beachlove from "../images/beachlove.jpg"
 
 function Home() {
-    const { handleLogin, name, handleChange, text } = useAuth()
+    const { handleLogin,  name, handleChange, text } = useAuth()
     const myuseref = useRef(null)
     useEffect(() => {
       myuseref.current.focus()
@@ -29,16 +29,17 @@ function Home() {
           />
           <link rel='canonical' href='/' />
         </Helmet>
-
+<main className='main'>
         <h2 className='home-page'>
-          You are on SterlingB's Love corner home page
+          Welcome,  You are on SterlingB's Love corner page...... <b>SECOND EDITION IS HERE!!</b>
         </h2>
+        <div className='shift'>
         <h3>
-          To get access to a ticket for second edition of love corner's workshop
+          Would you like to be a participant?
         </h3>
         <h4>
-          Enter a username to gave access to a log in form to reserve a spot for
-          the workshop
+          Enter a username to gain access to a log in form to reserve a spot for
+          you. We cant wait to have you.
         </h4>
         
         <input
@@ -48,13 +49,16 @@ function Home() {
           value={name}
           onChange={handleChange}
         />
-        <label for="Username">Username</label><br/>
+        <label htmlFor="Username">Username</label><br/>
         
         <button type='button' className='sign-in' onClick={handleLogin}>
-          Sign In
+          Get started
         </button>
         <span className='invalid'>{text}</span>
+        </div>
+        </main>
       </div>
+      
     </div>
   )
 }

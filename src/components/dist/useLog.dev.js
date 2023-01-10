@@ -42,8 +42,7 @@ var useLog = function useLog() {
     text: text,
     setText: setText
   };
-}; //**********************************************************//
-
+};
 
 var _default = useLog;
 exports["default"] = _default;

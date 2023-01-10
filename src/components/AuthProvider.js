@@ -19,7 +19,10 @@ const AuthProvider = ({ children }) => {
     age:'',
     email:"",
     gender:'',
+    maritalStatus:'',
     values: [],
+    name:""
+    
     
   }
 
@@ -34,56 +37,57 @@ const AuthProvider = ({ children }) => {
     })
     if (state.firstName !== ' ') {
       state.revert = ' '
-      state.success = ' '
+      state.activate = ' '
     }
   }
 
   
 
-  // const Form_Btn = (e) => {
-  //   e.preventDefault()
-  //   if (state.firstName === '') {
-  //     dispatch({ type: 'EMPTY_STRING' })
-  //     return
-  //   }
-  //   if (state.lastName === '') {
-  //     dispatch({ type: 'EMPTY' })
-  //     return
-  //   }
+  const Form_Btn = (e) => {
+     e.preventDefault()
+     if (state.firstName === '') {
+       dispatch({ type: 'EMPTY_STRING' })
+       return
+     }
+     if (state.lastName === '') {
+       dispatch({ type: 'EMPTY' })
+       return
+     }
     
-  //   }
-  //   if (isNaN(state.age)) {
-  //     dispatch({ type: 'WRONG_AGE' })
-  //     return
-  //   }
+     
+     if (isNaN(state.age)) {
+       dispatch({ type: 'WRONG_AGE' })
+       return
+     }
 
   
-  //    if (isNaN(state.phone)) {
-  //     dispatch({ type: 'INVALID_PHONE' })
-  //    return
-  //    }
-  //   //  if (state.age < 18) {
-  //   //    dispatch({ type: 'WRONG_AGE' })
-  //   //    return
-  //   //  }
-  //     else {
-  //     const date = new Date()
-  //     const showTime =
-  //       date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
-  //     const suffix = {
-  //      id: new Date().getTime().toString(),
-  //      time: showTime,
+      if (isNaN(state.phone)) {
+      dispatch({ type: 'INVALID_PHONE' })
+     return
+     }
+    if (state.age < 18) {
+     dispatch({ type: 'WRONG_AGE' })
+      return
+  }
+      else {
+     const date = new Date()
+     const showTime =
+        date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+      const suffix = {
+        id: new Date().getTime().toString(),
+        time: showTime,
   
-  //        myfirstName: state.firstName,
-  //        mylastName:state.lastName,
-  //        myphone: state.phone,
-  //        mygender:state.gender,
-  //        myAge: state.age,
-  //        myEmail:state.email
-  //      }
-  //     dispatch({ type: 'ADEQUATE', payload: suffix })
-  
-  //  }
+          myFirstName: state.firstName,
+          myLastName:state.lastName,
+          myPhone: state.phone,
+          myGender:state.gender,
+          myAge: state.age,
+         myEmail:state.email,
+         myMaritalStatus:state.maritalStatus
+       }
+  dispatch({ type: 'ADEQUATE', payload: suffix })
+      }
+   }
     
   const { name, setName, handleChange, text, setText } = useLog('')
 
@@ -104,25 +108,28 @@ const origin = location.state?.from?.pathname || '/LoginForm'
         navigate('/LoginForm')
     }
   }
-
-  // const handleLogout = () => {
-  //   dispatch({ type: 'LOGOUT' })
-  //   setName('')
-  // setText('')
-  // }
+const redirectPath = location.state?.path || '/Home'
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' })
+    setName('')
+  setText('')
+   navigate(redirectPath, { replace: true })
+  
+  }
 
   const value = {
     name,
     setName,
     handleChange,
     handleLogin: onLogin,
-    // onLogout: handleLogout,
+    logOut: handleLogout,
     text,
     setText,
     REVERTS: state.reverts,
     FIRSTNAME: state.firstName,
     LASTNAME: state.lastName,
     AGE: state.age,
+    MARITALSTATUS: state.maritalStatus,
     
     GENDER: state.gender,
     EMAIL: state.email,
@@ -130,10 +137,9 @@ const origin = location.state?.from?.pathname || '/LoginForm'
     PHONE: state.phone,
     VALUES: state.values,
     handle_Input,
-    // Form_Btn,
+    Form_Btn,
   }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
-
 export default AuthProvider

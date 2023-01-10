@@ -52,23 +52,23 @@ const Reducer = (state, action) => {
       }
     
    
-    // case 'LOGOUT':
-    //   return {
-    //     ...state,
-    //     token: null,
-    //     reverts: '',
-    //     revert: '',
-    //     phone: '',
-    //     age: '',
-    //     email: '',
-    //     values: [],
+    case 'LOGOUT':
+      return {
+        ...state,
+        token: null,
+        reverts: '',
+        revert: '',
+        phone: '',
+        age: '',
+        email: '',
+        values: [],
       
 
-    //     firstName: '',
-    //     lastName: '',
+        firstName: '',
+        lastName: '',
 
         
-    //   }
+      }
     
     
     default:

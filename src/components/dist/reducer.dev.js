@@ -62,19 +62,19 @@ var Reducer = function Reducer(state, action) {
       return _objectSpread({}, state, {
         revert: 'Please Enter A VALID EMAIL'
       });
-    // case 'LOGOUT':
-    //   return {
-    //     ...state,
-    //     token: null,
-    //     reverts: '',
-    //     revert: '',
-    //     phone: '',
-    //     age: '',
-    //     email: '',
-    //     values: [],
-    //     firstName: '',
-    //     lastName: '',
-    //   }
+
+    case 'LOGOUT':
+      return _objectSpread({}, state, {
+        token: null,
+        reverts: '',
+        revert: '',
+        phone: '',
+        age: '',
+        email: '',
+        values: [],
+        firstName: '',
+        lastName: ''
+      });
 
     default:
       return state;
