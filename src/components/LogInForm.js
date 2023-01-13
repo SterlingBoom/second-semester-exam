@@ -1,42 +1,36 @@
+import { useAuth } from '../App'
+import { useEffect, useRef } from 'react'
 
- import { useAuth } from '../App'
- import { useEffect, useRef } from 'react'
-
- import Hold from '../images/holdHands.jpg'
+import Hold from '../images/holdHands.jpg'
 
 function LogInForm() {
-  
   const {
     FIRSTNAME,
     LASTNAME,
     REVERT,
     name,
     MARITALSTATUS,
-    
+
     Form_Btn,
     PHONE,
     GENDER,
-    
+
     AGE,
     EMAIL,
     handle_Input,
-  } = useAuth();
-  
-  
-  const myuseref = useRef(null);
+  } = useAuth()
+
+  const myuseref = useRef(null)
   useEffect(() => {
-    myuseref.current.focus();
-  }, []);
+    myuseref.current.focus()
+  }, [])
   const Done = () => {
     return (
       <>
-        <p>
-          {REVERT}{' '}
-
-        </p>
+        <p>{REVERT} </p>
       </>
     )
-  };
+  }
   return (
     <div>
       <div
@@ -48,10 +42,11 @@ function LogInForm() {
           height: '700px',
         }}
       >
-        
         <div className='form-container form-box'>
           <h1 className='welcome-header'>WELCOME&nbsp;{name.toUpperCase()} </h1>
-          <h6 className='warning'>Please note that this page is accessible to 18years and above ONLY</h6>
+          <h6 className='warning'>
+            Please note that this page is accessible to 18years and above ONLY
+          </h6>
           <h2 className='form-header'> Log In To Register For The Workshop</h2>
 
           <form>
@@ -67,7 +62,7 @@ function LogInForm() {
                 autoComplete='off'
                 required
               />
-            </div> 
+            </div>
             <div>
               <input
                 type='text'
@@ -80,8 +75,8 @@ function LogInForm() {
                 required
               />
             </div>
-             
-             <div>
+
+            <div>
               <input
                 type='number'
                 id='age'
@@ -92,9 +87,9 @@ function LogInForm() {
                 autoComplete='off'
                 required
               />
-            </div> 
+            </div>
 
-             <div>
+            <div>
               <input
                 type='tel'
                 id='phone'
@@ -105,7 +100,7 @@ function LogInForm() {
                 autoComplete='off'
                 required
               />
-            </div> 
+            </div>
             <div>
               <input
                 type='email'
@@ -127,32 +122,35 @@ function LogInForm() {
                 <option value='Female'>Prefer</option>
               </select>
               <label labelfor='Gender'></label>
-              </div>
+            </div>
             <div>
-              <select value={MARITALSTATUS} onChange={handle_Input} name='maritalStatus'>
-                Marital Status<option value='select'>s</option>
+              <select
+                value={MARITALSTATUS}
+                onChange={handle_Input}
+                name='maritalStatus'
+              >
+                Marital Status<option value='select'>Marital Status</option>
                 <option value='Single'>Single</option>
                 <option value='Married'>Married</option>
                 <option value='Divorced'>Divorced</option>
                 <option value='Complicated'>Complicated</option>
               </select>
               <label labelfor='Gender'></label>
-              </div>
-              <p
-                className={
-                  REVERT === 'Registration Successful' ? 'activate' : 'error'
-                }
-              >
-                {REVERT === 'Registration Successful' ? <Done /> : REVERT}
-              </p>
+            </div>
+            <p
+              className={
+                REVERT === 'Registration Successful' ? 'activate' : 'error'
+              }
+            >
+              {REVERT === 'Registration Successful' ? <Done /> : REVERT}
+            </p>
 
-              <button type='submit' className='sign-in' onClick={Form_Btn}>
-                REGISTER NOW
-              </button>
-            
+            <button type='submit' className='sign-in' onClick={Form_Btn}>
+              REGISTER NOW
+            </button>
           </form>
         </div>
-    </div>
+      </div>
     </div>
   )
 }
