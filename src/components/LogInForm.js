@@ -121,7 +121,7 @@ function LogInForm() {
             </div>
             <div>
               <select value={GENDER} onChange={handle_Input} name='gender'>
-                <option value='select'>select</option>
+                <option value='select'>Gender</option>
                 <option value='Male'>Male</option>
                 <option value='Female'>Female</option>
                 <option value='Female'>Prefer</option>
@@ -130,7 +130,7 @@ function LogInForm() {
               </div>
             <div>
               <select value={MARITALSTATUS} onChange={handle_Input} name='maritalStatus'>
-                <option value='select'>select</option>
+                Marital Status<option value='select'>s</option>
                 <option value='Single'>Single</option>
                 <option value='Married'>Married</option>
                 <option value='Divorced'>Divorced</option>
