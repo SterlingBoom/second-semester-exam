@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato:wght@300&family=Open+Sans:wght@300&family=Tiro+Gurmukhi&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Karla&family=Roboto+Serif:opsz@8..144&display=swap");
 
 
 *{
@@ -9,6 +9,8 @@
 }
 body{
   text-align: center;
+  font-family: "karla", sans-serif;
+  font-size: 17px;
   /* background-color: #e9eeee53; */
     /* background: url("./images/beachlove.jpg"); */
     /* background-repeat: no-repeat; */
@@ -182,7 +184,7 @@ nav{
  {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
-  color: #413c3c;
+  color: #200303;
 }
 .navlinks:hover::after
 .navlinks li ::after{
@@ -198,13 +200,7 @@ nav{
      position: relative;
      /* border: 1px solid black; */
 }
-.form-box {
-    /* margin-top: 0px; */
-      /* border-radius: 25px; */
-    /* border-bottom-style: solid; */
-    /* border-color: #50e54b; */
 
-}
  form {
      position: absolute;
      top: 0;
@@ -215,7 +211,7 @@ nav{
 }
 .form-header{
   float: right;
-  margin-top: 70px;
+  margin-top: 50px;
   color: #ea9e9e;
   margin-right: 30px;
   font-weight: 900;
@@ -349,6 +345,32 @@ color: white;
   font-size: 1.2rem;
 }
 
+.nav--item {
+  margin-right: 1.2em;
+  cursor: pointer;
+  
+  ;
+}
+
+
+
+.nav--item a:after {
+  display: block;
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid #019fb6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  margin-top: 4px;
+}
+
+.nav--item a:hover:after {
+  transform: scaleX(1);
+}
+
+
+
+
 
 @media screen and (max-width: 768px) {
   .mobile--menu {
@@ -360,6 +382,10 @@ color: white;
     position: absolute;
     right: -8px;
 
+  }
+  .main {
+    position: relative;
+    font-size: 14px;
   }
   .nav {
     position: absolute;
@@ -378,6 +404,25 @@ color: white;
    .nav.open {
     right: -20px;
   }
+    .nav--item:first-child {
+    margin-top: 5em;
+  }
+
+  .nav--item {
+    margin-top: 3em;
+    font-size: 1.2rem;
+  }
+
+  .nav--item a {
+    color: wheat;
+  }
+
+  .nav--item a:after {
+    margin-left: 40%;
+    width: 20%;
+  }
+
+
   .italic{
     position: absolute;
     left: -3px;
@@ -388,4 +433,18 @@ color: white;
   .form-header{
     margin-top: 50px;
   }
+  .profile-page{
+   background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 1.75rem;
+  width: 100%;
+  text-align: center;
+  /* align-content: center; */
+  margin: auto;
+  /* margin-top: 20px; */
+  height: 600px;
+  padding-top: 40px ;
+  /* margin-bottom: 30px; */
+}
 }

@@ -26,12 +26,12 @@ function Navbar() {
       </Helmet>
 
       <h1 className='italic'>
-        <i>Relationship ENTHUSIAST</i>{' '}
+        <i>Love ENTHUSIAST</i>{' '}
       </h1>
 
       <div>
         <ul id='navbar' className={`nav ${navOpen ? '' : 'open'}`}>
-          <li>
+          <li className='nav--item'>
             <Link
               to='/'
               className='nav-links active'
@@ -45,7 +45,7 @@ function Navbar() {
               Home
             </Link>
           </li>
-          <li>
+          <li className='nav--item'>
             <Link
               to='/about'
               className='nav-links'
@@ -59,7 +59,7 @@ function Navbar() {
               About
             </Link>
           </li>
-          <li>
+          <li className='nav--item'>
             <Link
               to='/Gist'
               className='nav-links'
@@ -73,12 +73,12 @@ function Navbar() {
               Gist
             </Link>
           </li>
-          <li>
+          <li className='nav--item'>
             <Link
               to='/'
               className='nav-links'
               activeclass='active'
-              spy='trur'
+              spy='true'
               smooth={true}
               offset={-100}
               duration={500}
@@ -87,7 +87,7 @@ function Navbar() {
               Profile
             </Link>
           </li>
-          <li>
+          <li className='nav--item'>
             <Link
               to='/'
               className='nav-links'
@@ -101,8 +101,8 @@ function Navbar() {
               Login
             </Link>
           </li>
-          <button type="button" className="log-out" onClick={logOut}>
-          Log out
+          <button type='button' className='log-out' onClick={logOut}>
+            Log out
           </button>
         </ul>
       </div>

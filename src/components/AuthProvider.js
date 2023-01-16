@@ -131,7 +131,7 @@ const redirectPath = location.state?.path || '/Home'
     handleChange,
     handleLogin: onLogin,
     logOut: handleLogout,
-    // registered:onRegistrationSuccessful,
+    
     text,
     setText,
     REVERTS: state.reverts,

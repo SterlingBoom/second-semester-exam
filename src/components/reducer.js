@@ -14,11 +14,11 @@ const Reducer = (state, action) => {
       }
     
     case 'ADEQUATE':
-      const newPeople = [...state.values, action.payload]
+      const newAttendee = [...state.values, action.payload]
       return {
         ...state,
         revert: 'REGISTRATION SUCCESSFUL!',
-        values: newPeople,
+        values: newAttendee,
         firstName: '',
         lastName: '',
         phone: '',
@@ -42,7 +42,7 @@ const Reducer = (state, action) => {
     case 'WRONG_AGE':
       return {
         ...state,
-        revert: 'Please Enter A VALID AGE',
+        revert: 'VALID AGE IS 18 AND ABOVE',
       }
     
     case 'WRONG_EMAIL':

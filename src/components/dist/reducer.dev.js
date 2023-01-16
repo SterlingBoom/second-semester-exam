@@ -30,10 +30,10 @@ var Reducer = function Reducer(state, action) {
       });
 
     case 'ADEQUATE':
-      var newPeople = [].concat(_toConsumableArray(state.values), [action.payload]);
+      var newAttendee = [].concat(_toConsumableArray(state.values), [action.payload]);
       return _objectSpread({}, state, {
         revert: 'REGISTRATION SUCCESSFUL!',
-        values: newPeople,
+        values: newAttendee,
         firstName: '',
         lastName: '',
         phone: '',
@@ -54,7 +54,7 @@ var Reducer = function Reducer(state, action) {
 
     case 'WRONG_AGE':
       return _objectSpread({}, state, {
-        revert: 'Please Enter A VALID AGE'
+        revert: 'VALID AGE IS 18 AND ABOVE'
       });
 
     case 'WRONG_EMAIL':
